@@ -17,7 +17,8 @@ public class PaymentController{
     @Autowired
     RazorpayClient razorpayClient;
 
-    @GetMapping("/createOrder")
+    @PostMapping("/createOrder")
+
     String createOrder(@RequestBody Map<String, Object> order)throws RazorpayException {
         JSONObject object = new JSONObject();
         int amount = Integer.parseInt(order.get("amount").toString());
